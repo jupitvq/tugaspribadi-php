@@ -19,8 +19,16 @@
       </div><!-- /.container-fluid -->
     </section>
 
+    
+
+
     <!-- Main content -->
     <section class="content">
+
+    <div class="callout callout-info">
+        <h5><i class="fas fa-info"></i> Note:</h5>
+        Every employee data will be displayed here. Please note,  <b>any changed or deleted data is irreversible.</b>
+    </div>
             <!-- /.row -->
             <div class="row">
           <div class="col-12">
