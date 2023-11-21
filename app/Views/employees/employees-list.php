@@ -11,7 +11,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Employees</li>
             </ol>
           </div>
@@ -26,7 +26,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Fixed Header Table</h3>
+                <h3 class="card-title"><button type="button" class="btn btn-block btn-primary btn-sm">Add Employee</button></h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">

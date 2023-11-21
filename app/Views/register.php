@@ -17,51 +17,81 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url('adminLTE/dist/css/adminlte.min.css')?>">
 
-    <title>Login</title>
+    <title>Register</title>
   </head>
-  <body class="hold-transition login-page">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="card col-8">
-            
-            <div class="card-header text-center">
-                <a class="h1"><b>Register</b></a>
-            </div>
-
-            <p></p>
-                
-                <?php if(isset($validation)):?>
-                    <div class="alert alert-warning">
-                       <?= $validation->listErrors() ?>
-                    </div>
-                <?php endif;?>
-                <form action="<?php echo base_url(); ?>/SignupController/store" method="post">
-                    <div class="form-group mb-3">
-                        <input type="text" name="name" placeholder="Account Name" value="<?= set_value('name') ?>" class="form-control" >
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="password" name="password" placeholder="Password" class="form-control" >
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" >
-                    </div>
-                    
-                    <div class="d-grid">
-                         <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>     
-                </form>
-                
-                <p></p>
-                <p class="mb-0 row">
-                    <a href="/login" class="text-center">Login to existing account</a>
-                </p>
-                <p></p>
-            </div>
-              
-        </div>
+  
+  <body class="hold-transition register-page">
+<div class="register-box">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="#" class="h1"><b>Admin</b>LTE</a>
     </div>
-  </body>
+    <div class="card-body">
+      <p class="login-box-msg">Register an account</p>
+
+      <?php if(isset($validation)):?>
+            <div class="alert alert-warning">
+            <i class="icon fas fa-ban"></i>
+                <?= $validation->listErrors() ?>
+            </div>
+        <?php endif;?>
+
+      <form action="<?php echo base_url(); ?>SignupController/store" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="name" placeholder="Full name" value="<?= set_value('name') ?>">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" name="email" placeholder="Email" value="<?= set_value('email') ?>">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="confirmpassword" class="form-control" placeholder="Retype password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+              <label for="agreeTerms">
+               I'm not a <a href="#">robot</a>
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <a href="/login" class="text-center">I already have an account</a>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+</body>
 </html>
