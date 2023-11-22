@@ -71,12 +71,12 @@
         </div>
         <div class="row">
           <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               I'm not a <a href="#">robot</a>
-              </label>
-            </div>
+          <div class="form-group mb-0">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
+                      <label class="custom-control-label" for="exampleCheck1">I'm not a <a href="#">robot</a>.</label>
+                    </div>
+                  </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
