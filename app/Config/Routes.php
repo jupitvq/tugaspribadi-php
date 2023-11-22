@@ -16,5 +16,5 @@ $routes->get('/logout', 'SigninController::logout');
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 $routes->get('/home', 'Home::index',['filter' => 'authGuard']);
 
-$routes->get('/employees', 'EmployeeController::index',['filter' => 'authGuard']);
-$routes->get('/employees/add', 'EmployeeController::add',['filter' => 'authGuard']);
+$routes->get('/karyawan', 'EmployeeController::index',['filter' => 'authGuard']);
+$routes->get('/karyawan/tambah', 'EmployeeController::add',['filter' => 'authGuard']);

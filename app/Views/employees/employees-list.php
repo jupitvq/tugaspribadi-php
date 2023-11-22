@@ -24,7 +24,7 @@
     <section class="content">
 
     <div class="callout callout-info">
-        <h5><i class="fas fa-info"></i> Note:</h5>
+        <h5><i class="fas fa-info"></i> Catatan:</h5>
         Semua data karyawan akan ditampilkan di tabel bawah ini. Harap diingat,  <b>penghapusan atau perubahan data tidak bisa dikembalikan.</b>
     </div>
             <!-- /.row -->
@@ -32,7 +32,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><a type="button" href="/employees/add" class="btn btn-block btn-primary btn-sm">Tambah Karyawan</a></h3>
+                <h3 class="card-title"><a type="button" href="/karyawan/tambah" class="btn btn-block btn-primary btn-sm">Tambah Karyawan</a></h3>
 
                 <div class="card-tools">
                 </div>
