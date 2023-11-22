@@ -32,7 +32,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><button type="button" class="btn btn-block btn-primary btn-sm">Add Employee</button></h3>
+                <h3 class="card-title"><a type="button" href="/employees/add" class="btn btn-block btn-primary btn-sm">Add Employee</a></h3>
 
                 <div class="card-tools">
                 </div>
@@ -40,7 +40,7 @@
               <!-- /.card-header -->
               <!--<div class="card-body table-responsive p-0" style="height: 800px;">-->
               <div class="card-body table-responsive p-0" style="height: 100%;">
-                <table id="employee-table" class="table table-bordered table-striped">
+                <table id="employee-table" class="table table-bordered table-striped table-hover">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -65,7 +65,7 @@
                       <td>083241359413</td>
                       <td>Mandiri</td>
                       <td>1234567890</td>
-                      <td>Aktif</td>
+                      <td><span class="badge bg-success">AKTIF</span></td>
                       <td class="project-actions">
                           
                           <a class="btn btn-info btn-sm" href="#">
