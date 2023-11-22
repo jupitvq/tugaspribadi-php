@@ -53,7 +53,7 @@
             <a href="<?php echo base_url();?>employees" class="nav-link">
             <i class="fas fa-hospital-user nav-icon"></i>
               <p>
-                Employees
+                Data Karyawan
               </p>
             </a>
           </li>

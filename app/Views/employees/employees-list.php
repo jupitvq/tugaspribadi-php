@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Employees</h1>
+            <h1>Karyawan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Employees</li>
+              <li class="breadcrumb-item active">Data Karyawan</li>
             </ol>
           </div>
         </div>
@@ -25,14 +25,14 @@
 
     <div class="callout callout-info">
         <h5><i class="fas fa-info"></i> Note:</h5>
-        Every employee data will be displayed here. Please note,  <b>any changed or deleted data is irreversible.</b>
+        Semua data karyawan akan ditampilkan di tabel bawah ini. Harap diingat,  <b>penghapusan atau perubahan data tidak bisa dikembalikan.</b>
     </div>
             <!-- /.row -->
             <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><a type="button" href="/employees/add" class="btn btn-block btn-primary btn-sm">Add Employee</a></h3>
+                <h3 class="card-title"><a type="button" href="/employees/add" class="btn btn-block btn-primary btn-sm">Tambah Karyawan</a></h3>
 
                 <div class="card-tools">
                 </div>
@@ -51,6 +51,7 @@
                       <th>No. Telepon</th>
                       <th>Bank</th>
                       <th>No. Rekening</th>
+                      <th>Gaji Pokok</th>
                       <th>Status</th>
                       <th></th>
                     </tr>
@@ -65,18 +66,19 @@
                       <td>083241359413</td>
                       <td>Mandiri</td>
                       <td>1234567890</td>
+                      <td>Rp 1.000.000</td>
                       <td><span class="badge bg-success">AKTIF</span></td>
                       <td class="project-actions">
                           
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
-                              Edit
+                              Ubah
                           </a>
                           <a class="btn btn-danger btn-sm" href="#">
                               <i class="fas fa-trash">
                               </i>
-                              Delete
+                              Hapus
                           </a>
                       </td>
                     </tr>

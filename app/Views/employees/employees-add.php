@@ -7,13 +7,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Employees</h1>
+            <h1>Karyawan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item"><a href="/employees">Employees</a></li>
-              <li class="breadcrumb-item active">Add Employee</li>
+              <li class="breadcrumb-item"><a href="/employees">Data Karyawan</a></li>
+              <li class="breadcrumb-item active">Tambah Karyawan</li>
             </ol>
           </div>
         </div>
@@ -51,7 +51,7 @@
               <div class="form-group">
                 <label for="jabatan">Jabatan</label>
                 <select id="jabatan" class="form-control custom-select">
-                  <option selected disabled>Select...</option>
+                  <option selected disabled>Pilih...</option>
                   <option>Manager</option>
                   <option>Karyawan Tetap</option>
                   <option>Karyawan Kontrak</option>
@@ -91,6 +91,10 @@
                 <label for="nomorrekening">Nomor Rekening</label>
                 <input type="number" id="nomorrekening" class="form-control">
               </div>
+              <div class="form-group">
+                <label for="nomorrekening">Gaji Pokok</label>
+                <input type="number" id="nomorrekening" class="form-control">
+              </div>
             </div>
             <!-- /.card-body -->
           </div>
@@ -100,8 +104,8 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <a href="/employees" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Submit Data" class="btn btn-success float-right">
+          <a href="/employees" class="btn btn-secondary">Batal</a>
+          <input type="submit" value="Submit Data Karyawan" class="btn btn-success float-right">
         </div>
       </div>
 

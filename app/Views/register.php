@@ -27,7 +27,7 @@
       <a href="#" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Register an account</p>
+      <p class="login-box-msg">Belum punya akun? harap daftar disini.</p>
 
       <?php if(isset($validation)):?>
             <div class="alert alert-warning">
@@ -38,7 +38,7 @@
 
       <form action="<?php echo base_url(); ?>SignupController/store" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="name" placeholder="Full name" value="<?= set_value('name') ?>">
+          <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" value="<?= set_value('name') ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="confirmpassword" class="form-control" placeholder="Retype password">
+          <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -74,19 +74,19 @@
           <div class="form-group mb-0">
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                      <label class="custom-control-label" for="exampleCheck1">I'm not a <a href="#">robot</a>.</label>
+                      <label class="custom-control-label" for="exampleCheck1">Saya bukan <a href="#">robot</a>.</label>
                     </div>
                   </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block">Daftar</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
-      <a href="/login" class="text-center">I already have an account</a>
+      <a href="/login" class="text-center">Saya sudah mempunyai akun</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

@@ -31,7 +31,7 @@
       <a href="#" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Login menggunakan akun anda</p>
     
       <?php if(session()->getFlashdata('msg')):?>
             <div class="alert alert-danger alert-dismissible">
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -60,7 +60,7 @@
         <div class="row">
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
           </div>
           <!-- /.col -->
         </div>
@@ -68,7 +68,7 @@
 
       <p class="mb-0">
         <p></p>
-        <a href="/register" class="text-center">Register an account</a>
+        <a href="/register" class="text-center">Daftar Akun</a>
       </p>
     </div>
     <!-- /.card-body -->
