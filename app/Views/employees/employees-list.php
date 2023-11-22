@@ -19,8 +19,6 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    
-
 
     <!-- Main content -->
     <section class="content">
@@ -37,15 +35,6 @@
                 <h3 class="card-title"><button type="button" class="btn btn-block btn-primary btn-sm">Add Employee</button></h3>
 
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -105,11 +94,12 @@
   <!-- /.content-wrapper -->
 </body>
 
+<!-- jQuery -->
 <script src="<?=base_url('adminLTE/plugins/jquery/jquery.min.js')?>"></script>
-
 <!-- Bootstrap 4 -->
 <script src="<?=base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
+<!-- DataTable Display -->
 <script src="<?=base_url('adminLTE/plugins/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js')?>"></script>
@@ -123,11 +113,6 @@
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.print.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js')?>"></script>
 
-
-<!-- AdminLTE App -->
-<script src="<?=base_url('adminLTE/dist/js/adminlte.min.js')?>"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?=base_url('adminLTE/dist/js/demo.js')?>"></script>
 
 <script>
   $(function () {
