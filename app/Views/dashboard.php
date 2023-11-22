@@ -7,7 +7,7 @@ Swal.fire({
   text: "Anda telah berhasil login!",
   icon: "success",
   confirmButtonText: `
-    Continue
+    Lanjut
   `,
 });
 </script>
@@ -83,3 +83,8 @@ Swal.fire({
 
   </div>
   <!-- /.content-wrapper -->
+
+  <!-- jQuery -->
+<script src="<?=base_url('adminLTE/plugins/jquery/jquery.min.js')?>"></script>
+<!-- Bootstrap 4 -->
+<script src="<?=base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>

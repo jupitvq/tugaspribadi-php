@@ -66,7 +66,7 @@
                       <td>083241359413</td>
                       <td>Mandiri</td>
                       <td>1234567890</td>
-                      <td>Rp 1.000.000</td>
+                      <td>1.000.000</td>
                       <td><span class="badge bg-success">AKTIF</span></td>
                       <td class="project-actions">
                           
