@@ -41,8 +41,31 @@ class EmployeeController extends Controller
 
     public function create()
     {   
-        $session = session();
-        $header['title']='Menambahkan Karyawan | Karyawan';
+        helper(['form', 'url']);
+
+        $header['title'] = 'Membuat Data Karyawan | Karyawan';
+
+        $input = $this->validate([
+        'nik' => 'required',
+        'nama' => 'required',
+        'jabatan' => 'required',
+        'alamat' => 'required',
+        'no_telepon' => 'required',
+        'bank' => 'required',
+        'no_rekening' => 'required',
+        'gaji' => 'required',
+        'status' => 'required',
+    ]);
+
+    if (!$input) {
+        echo view('partial/header',$header);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('employees/employees-add', [
+            'validation' => $this->validator
+        ]);
+        echo view('partial/footer');
+    } else {
         $this->karyawan->insert([
             'nik' => $this->request->getPost('nik'),
             'nama' => $this->request->getPost('nama'),
@@ -55,7 +78,8 @@ class EmployeeController extends Controller
             'status' => $this->request->getPost('status'),
         ]);
 
-        return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil ditambahkan!');;
+        return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil ditambahkan!');
+        }
     }
 
     public function ubah($id)

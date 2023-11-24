@@ -26,8 +26,14 @@
         <h5><i class="fas fa-info"></i> Catatan:</h5>
         Isi form yang tersedia dibawah ini untuk mengisi data karyawan baru. <b>Data NIK dan Nama Lengkap tidak dapat diubah setelah data di submit!</b>
     </div>
+
+    <?php if(isset($validation)): ?>
+        <div class="alert alert-danger">
+            <?= $validation->listErrors() ?>
+        </div>
+    <?php endif; ?>
     
-    <form id="tambahkaryawan" action="<?php echo base_url(); ?>karyawan/tambah/baru" method="post">
+    <form id="tambahkaryawan" action="<?php echo base_url(); ?>karyawan/tambah/baru" method="post" novalidate>
     <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
@@ -122,6 +128,7 @@
 <script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
 
 <script>
+  /*
 document.getElementById('tambahkaryawan').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -136,7 +143,7 @@ document.getElementById('tambahkaryawan').addEventListener('submit', function(ev
         cancelButtonText: "Batal",
     }).then((result) => {
         if (result.isConfirmed) {
-            event.target.submit();
+            this.submit();
 
             Swal.fire({
                 title: "Data ditambah!",
@@ -148,5 +155,5 @@ document.getElementById('tambahkaryawan').addEventListener('submit', function(ev
             }, 5000);
         }
     });
-});
+});*/
 </script>
