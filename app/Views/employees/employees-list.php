@@ -1,3 +1,17 @@
+<style>
+        .dataTables_filter {
+            float: right; /* Aligns the search filter to the right */
+        }
+        .dt-buttons {
+            margin-bottom: 20px; /* Adjusts the gap between the buttons and the table */
+        }
+        .info-paging {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+</style>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
@@ -44,15 +58,28 @@
             <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header py-3">
-              <a type="button" href="/karyawan/tambah" class="btn btn-block btn-primary btn-sm col-1">Tambah Karyawan</a>
+              <div class="card-header d-flex flex-row">
+              <a type="button" href="/karyawan/tambah" class="btn btn-primary mr-2">Tambah Karyawan</a>
+              <!--
+              <div class="input-group input-group-sm ml-auto" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                -->
+                  
                 <h3 class="card-title"></h3>
                 <div class="card-tools">
+                  
                 </div>
               </div>
               <!-- /.card-header -->
               <!--<div class="card-body table-responsive p-0" style="height: 800px;">-->
-              <div class="card-body table-responsive p-0" style="height: 100%;">
+              <div class="card-body" style="height: 100%;">
                 <table id="employee-table" class="table table-bordered table-striped table-hover">
                   <thead>
                     <tr>
@@ -162,7 +189,7 @@ function konfirmasihapus(event, href) {
     Swal.fire({
         title: "Apakah anda yakin?",
         text: "Anda akan menghapus data karyawan ini!",
-        footer: "<b>PENTING</b>: Data akan hilang secara permanen ketika dihapus.",
+        footer: "<b>PENTING</b>: Data akan hilang secara permanen setelah dihapus.",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -184,15 +211,28 @@ function konfirmasihapus(event, href) {
 };
 
 
+
   $(function () {
     $('#employee-table').DataTable({
+      "language": {
+            "search": ""
+        },
+      "dom": 'Bftrpi',
+      "buttons": ["csv", "excel", "pdf", "print"],
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": true,
-      "info": false,
+      "info": true,
       "autoWidth": true,
       "responsive": true,
     });
+    
+    $('input[type="search"]').attr('placeholder', 'Pencarian...');
+    var infoAndPaging = $('<div/>').addClass('info-paging');
+    $('.dataTables_info').appendTo(infoAndPaging);
+    $('.dataTables_paginate').appendTo(infoAndPaging);
+    infoAndPaging.appendTo('.dataTables_wrapper');
+    //$('.btn.btn-primary.btn-sm').insertBefore('.dt-buttons');
   });
 </script>

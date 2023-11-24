@@ -26,7 +26,7 @@
         <h5><i class="fas fa-info"></i> Catatan:</h5>
         Isi form yang tersedia dibawah ini untuk mengisi data karyawan baru. <b>Data NIK dan Nama Lengkap tidak dapat diubah setelah data di submit!</b>
     </div>
-
+    
     <form id="tambahkaryawan" action="<?php echo base_url(); ?>karyawan/tambah/baru" method="post">
     <div class="row">
         <div class="col-md-6">
