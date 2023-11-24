@@ -4,7 +4,13 @@ use CodeIgniter\Controller;
 use App\Models\UserModel;
   
 class SignupController extends Controller
-{
+{   
+    public function __construct()
+    {
+        helper(['form']);
+        $this->session = \Config\Services::session();
+    }
+
     public function index()
     {
         helper(['form']);
@@ -30,10 +36,13 @@ class SignupController extends Controller
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
+
+            $this->session->setFlashdata('success', 'Account created successfully! You may now login.');
             return redirect()->to('/login');
         }else{
             $data['validation'] = $this->validator;
             echo view('register', $data);
+            
         }
           
     }

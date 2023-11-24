@@ -40,6 +40,12 @@
             </div>
         <?php endif;?>
 
+        <?php if(session()->getFlashdata('success')): ?>
+            <div class="alert alert-success">
+                <?php echo session()->getFlashdata('success'); ?>
+            </div>
+        <?php endif; ?>
+
       <form action="<?php echo base_url(); ?>SigninController/loginAuth" method="post">
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" value="<?= set_value('email') ?>" placeholder="Email">
