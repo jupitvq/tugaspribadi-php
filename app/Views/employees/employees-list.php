@@ -113,8 +113,8 @@
                           $warnastatus = $karyawan['status'];
                           $badgeColor = '';
                           switch ($warnastatus) {
-                            case 'TUGAS KELUAR':
-                              $badgeColor = 'red';
+                            case 'OUTBOUND':
+                              $badgeColor = 'info';
                               break;
                             case 'CUTI':
                               $badgeColor = 'warning';

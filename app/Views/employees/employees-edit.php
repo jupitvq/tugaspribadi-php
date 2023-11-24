@@ -88,7 +88,7 @@
                 <select id="status" name="status" class="form-control custom-select">
                   <option value="AKTIF" <?= ($karyawan['status'] == 'AKTIF') ? 'selected' : '' ?>>Aktif</option>
                   <option value="CUTI" <?= ($karyawan['status'] == 'CUTI') ? 'selected' : '' ?>>Cuti</option>
-                  <option value="TUGAS KELUAR" <?= ($karyawan['status'] == 'TUGAS KELUAR') ? 'selected' : '' ?>>Tugas Keluar</option>
+                  <option value="OUTBOUND" <?= ($karyawan['status'] == 'OUTBOUND') ? 'selected' : '' ?>>Tugas Keluar</option>
                   <option value="SUSPENDED" <?= ($karyawan['status'] == 'SUSPENDED') ? 'selected' : '' ?>>Keluar / Diskors</option>
                 </select>
               </div>

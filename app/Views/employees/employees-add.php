@@ -89,7 +89,7 @@
                 <select id="status" name="status" class="form-control custom-select">
                   <option value="AKTIF" selected>Aktif</option>
                   <option value="CUTI">Cuti</option>
-                  <option value="TUGAS KELUAR">Tugas Keluar</option>
+                  <option value="OUTBOUND">Tugas Keluar</option>
                   <option value="SUSPENDED">Keluar / Diskors</option>
                 </select>
               </div>
