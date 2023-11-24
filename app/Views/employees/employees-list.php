@@ -216,6 +216,7 @@ function konfirmasihapus(event, href) {
 
   $(function () {
     $('#employee-table').DataTable({
+      "responsive": true,
       "language": {
             "search": "",
             "lengthMenu": "Tampilkan _MENU_ entri",
@@ -255,7 +256,6 @@ function konfirmasihapus(event, href) {
       "ordering": true,
       "info": true,
       "autoWidth": true,
-      "responsive": true,
       "pageLength": 9
     });
     

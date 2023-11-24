@@ -80,7 +80,7 @@ Swal.fire({
             <div class="col-lg-6">
               <div class="card card-info card-outline">
                 <div class="card-header">
-                  <h5 class="m-0">Database Status <b><span class='badge bg-success'>CONNECTED</span></b></h5>
+                  <h5 class="m-0">Status Database <b><span class='badge bg-success'>TERHUBUNG</span></b></h5>
                 </div>
                 <div class="card-body">
                   <?php
@@ -92,13 +92,13 @@ Swal.fire({
                     echo "
                     
                     <dl class='row'>
-                      <dt class='col-sm-4'>Database Username</dt>
+                      <dt class='col-sm-4'>Username Database</dt>
                       <dd class='col-sm-8'>root</dd>
-                      <dt class='col-sm-4'>Database Name</dt>
+                      <dt class='col-sm-4'>Nama Database</dt>
                       <dd class='col-sm-8'>tugasjupiter</dd>
                     </dl>
                     <ul class='list-unstyled'>
-                      <li><b>Tables Detected</b>
+                      <li><b>Table Terdeteksi</b>
                         <ul>";
                           
                     $result = $mysqli->query("SHOW TABLES");
@@ -111,6 +111,49 @@ Swal.fire({
                     </ul>";
                   }
                   ?>
+                  <?php
+
+                  $result = $mysqli->query("SELECT COUNT(*) AS count FROM karyawans");
+                  $row = $result->fetch_assoc();
+                  $totalkaryawans = $row['count'];
+
+                  $result = $mysqli->query("SELECT COUNT(*) AS count FROM karyawans WHERE status = 'AKTIF'");
+                  $row = $result->fetch_assoc();
+                  $activeKaryawanCount = $row['count'];
+
+                  $result = $mysqli->query("SELECT COUNT(*) AS count FROM users");
+                  $row = $result->fetch_assoc();
+                  $totalusers = $row['count'];
+
+                  echo "
+                    <div class='row'>
+                      <div class='col-12 col-sm-4'>
+                        <div class='info-box bg-light'>
+                          <div class='info-box-content'>
+                            <span class='info-box-text text-center text-muted'>Jumlah Data Karyawan</span>
+                            <span class='info-box-number text-center text-muted mb-0'>$totalkaryawans</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-12 col-sm-4'>
+                        <div class='info-box bg-light'>
+                          <div class='info-box-content'>
+                            <span class='info-box-text text-center text-muted'>Jumlah Karyawan Aktif</span>
+                            <span class='info-box-number text-center text-muted mb-0'>$activeKaryawanCount</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-12 col-sm-4'>
+                        <div class='info-box bg-light'>
+                          <div class='info-box-content'>
+                            <span class='info-box-text text-center text-muted'>Jumlah Users</span>
+                            <span class='info-box-number text-center text-muted mb-0'>$totalusers</span>
+                          </div>
+                        </div>
+                      </div>
+                      ";
+                    ?>
+                  </div>
                 </div>
               </div>
             </div>
