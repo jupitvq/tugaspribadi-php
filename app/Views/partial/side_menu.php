@@ -94,7 +94,7 @@ document.getElementById('logout-link').addEventListener('click', function(event)
         title: 'Apakah anda yakin?',
         text: "Sesi anda akan berakhir setelah logout!  ",
         icon: 'warning',
-        footer: '<b>Catatan</b>: Pastikan semua pekerjaan anda sudah tersimpan.'
+        footer: '<b>Catatan</b>: Pastikan semua pekerjaan anda sudah tersimpan.',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
