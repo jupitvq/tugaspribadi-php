@@ -90,10 +90,10 @@ class EmployeeController extends Controller
         return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil diubah!');
     }
 
-    public function delete($id)
+    public function hapus($id)
     {
         $session = session();
-        
+
         $this->karyawan->delete($id);
 
         return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil dihapus!');

@@ -27,7 +27,7 @@
         Data NIK dan Nama Lengkap tidak dapat diubah. Data lama yang telah terubah tidak dapat dikembalikan kembali.
     </div>
 
-    <form action="<?= base_url('karyawan/ubah/update/'.$karyawan['id']) ?>" method="post">
+    <form id="editkaryawan" action="<?= base_url('karyawan/ubah/update/'.$karyawan['id']) ?>" method="post">
     <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
@@ -111,8 +111,41 @@
 </div>
 </form>
 
+</body>
+
 <!-- jQuery -->
 <script src="<?=base_url('adminLTE/plugins/jquery/jquery.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?=base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-</body>
+<!-- SweetAlert2 -->
+<script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
+
+<script>
+document.getElementById('editkaryawan').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    Swal.fire({
+        title: "Ubah data karyawan?",
+        text: "Pastikan data karyawan yang baru sudah benar.",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Konfirmasi",
+        cancelButtonText: "Batal",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit();
+
+            Swal.fire({
+                title: "Data diubah!",
+                text: "Data karyawan berhasil diubah.",
+                icon: "success"
+            });
+            setTimeout(function() {
+                window.location.href = '/karyawan';
+            }, 5000);
+        }
+    });
+});
+</script>

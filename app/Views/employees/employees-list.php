@@ -44,9 +44,9 @@
             <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title"><a type="button" href="/karyawan/tambah" class="btn btn-block btn-primary btn-sm">Tambah Karyawan</a></h3>
-
+              <div class="card-header py-3">
+              <a type="button" href="/karyawan/tambah" class="btn btn-block btn-primary btn-sm col-1">Tambah Karyawan</a>
+                <h3 class="card-title"></h3>
                 <div class="card-tools">
                 </div>
               </div>
@@ -111,11 +111,11 @@
                               </i>
                               Ubah
                           </a>
-                          <a class="btn btn-danger btn-sm" href="/karyawan/hapus/<?= $karyawan['id'] ?>" onclick="return confirm('Are you sure ?')">
+                          <button type="button" class="btn btn-danger btn-sm" id="tombolhapus" onclick="konfirmasihapus(event, '/karyawan/hapus/<?= $karyawan['id'] ?>')" >
                               <i class="fas fa-trash">
                               </i>
                               Hapus
-                          </a>
+                          </button>
                       </td>
                     </tr>
                     <?php endforeach; ?>
@@ -156,6 +156,34 @@
 
 
 <script>
+function konfirmasihapus(event, href) {
+    event.preventDefault();
+
+    Swal.fire({
+        title: "Apakah anda yakin?",
+        text: "Anda akan menghapus data karyawan ini!",
+        footer: "<b>PENTING</b>: Data akan hilang secara permanen ketika dihapus.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus",
+        cancelButtonText: "Batal",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Dihapus!",
+                text: "Data karyawan berhasil dihapus.",
+                icon: "success"
+            });
+            setTimeout(function() {
+                window.location.href = href;
+            }, 2000);
+        }
+    });
+};
+
+
   $(function () {
     $('#employee-table').DataTable({
       "paging": true,
@@ -167,8 +195,4 @@
       "responsive": true,
     });
   });
-</script>
-
-<script>
-
 </script>
