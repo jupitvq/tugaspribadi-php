@@ -27,6 +27,19 @@
         <h5><i class="fas fa-info"></i> Catatan:</h5>
         Semua data karyawan akan ditampilkan di tabel bawah ini. Harap diingat,  <b>penghapusan atau perubahan data tidak bisa dikembalikan.</b>
     </div>
+
+    <?php
+        if(session()->getFlashData('success')){
+        ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('success') ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <?php
+        }
+        ?>
             <!-- /.row -->
             <div class="row">
           <div class="col-12">
@@ -57,31 +70,55 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php foreach ($karyawans as $key => $karyawan) : ?>
                     <tr>
-                      <td>1</td>
-                      <td>10341531515151</td>
-                      <td>John Doe</td>
-                      <td>Karyawan Tetap</td>
-                      <td>Hotel Pondok Indah Lt. 6</td>
-                      <td>083241359413</td>
-                      <td>Mandiri</td>
-                      <td>1234567890</td>
-                      <td>1.000.000</td>
-                      <td><span class="badge bg-success">AKTIF</span></td>
+                      <td><?= ++$key ?></td>
+                      <td><?= $karyawan['nik'] ?></td>
+                      <td><?= $karyawan['nama'] ?></td>
+                      <td><?= $karyawan['jabatan'] ?></td>
+                      <td><?= $karyawan['alamat'] ?></td>
+                      <td><?= $karyawan['no_telepon'] ?></td>
+                      <td><?= $karyawan['bank'] ?></td>
+                      <td><?= $karyawan['no_rekening'] ?></td>
+                      <td><?= $karyawan['gaji'] ?></td>
+                      <td>
+                      <?php
+                          $warnastatus = $karyawan['status'];
+                          $badgeColor = '';
+                          switch ($warnastatus) {
+                            case 'TUGAS KELUAR':
+                              $badgeColor = 'red';
+                              break;
+                            case 'CUTI':
+                              $badgeColor = 'warning';
+                              break;
+                            case 'AKTIF':
+                              $badgeColor = 'success';
+                              break;
+                            case 'SUSPENDED':
+                              $badgeColor = 'danger';
+                              break;
+                            default:
+                              $badgeColor = 'default';
+                              break;
+                          }
+                        ?>
+                        <span class="badge bg-<?= $badgeColor; ?>"><?= $karyawan['status'] ?></span>
+                      </td>
                       <td class="project-actions">
-                          
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="/karyawan/ubah/<?= $karyawan['id'] ?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Ubah
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="/karyawan/hapus/<?= $karyawan['id'] ?>" onclick="return confirm('Are you sure ?')">
                               <i class="fas fa-trash">
                               </i>
                               Hapus
                           </a>
                       </td>
                     </tr>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
@@ -100,6 +137,8 @@
 <script src="<?=base_url('adminLTE/plugins/jquery/jquery.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?=base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+<!-- SweetAlert2 -->
+<script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
 
 <!-- DataTable Display -->
 <script src="<?=base_url('adminLTE/plugins/datatables/jquery.dataTables.min.js')?>"></script>
@@ -124,8 +163,12 @@
       "searching": false,
       "ordering": true,
       "info": false,
-      "autoWidth": false,
+      "autoWidth": true,
       "responsive": true,
     });
   });
+</script>
+
+<script>
+
 </script>
