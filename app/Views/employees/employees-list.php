@@ -83,7 +83,7 @@
                 <table id="employee-table" class="table table-bordered table-striped table-hover">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>No</th>
                       <th>NIK</th>
                       <th>Nama</th>
                       <th>Jabatan</th>
@@ -181,6 +181,10 @@
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.print.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js')?>"></script>
 
+<!-- DataTables -->
+<link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
+<link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
+<link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
 
 <script>
 function konfirmasihapus(event, href) {
@@ -210,15 +214,41 @@ function konfirmasihapus(event, href) {
     });
 };
 
-
-
   $(function () {
     $('#employee-table').DataTable({
       "language": {
-            "search": ""
+            "search": "",
+            "lengthMenu": "Tampilkan _MENU_ entri",
+            "zeroRecords": "Tidak ada data yang cocok.",
+            "info": "Menampilkan <b> _START_ </b> sampai <b> _END_ </b> dari <b> _TOTAL_ </b> data karyawan",
+            "infoEmpty": "Menampilkan <b>0</b> sampai <b>0</b> dari <b>0</b> data karyawan",
+            "infoFiltered": "(disaring dari _MAX_ total data karyawan)",
+            "paginate": {
+                "first": "Pertama",
+                "last": "Terakhir",
+                "next": "Selanjutnya",
+                "previous": "Sebelumnya"
+            }
         },
       "dom": 'Bftrpi',
-      "buttons": ["csv", "excel", "pdf", "print"],
+      "buttons": [
+            {
+                extend: 'csv',
+                text: 'CSV'
+            },
+            {
+                extend: 'excel',
+                text: 'Excel'
+            },
+            {
+                extend: 'pdf',
+                text: 'PDF'
+            },
+            {
+                extend: 'print',
+                text: 'Cetak'
+            }
+        ],
       "paging": true,
       "lengthChange": true,
       "searching": true,
@@ -226,6 +256,7 @@ function konfirmasihapus(event, href) {
       "info": true,
       "autoWidth": true,
       "responsive": true,
+      "pageLength": 9
     });
     
     $('input[type="search"]').attr('placeholder', 'Pencarian...');

@@ -43,11 +43,13 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="NIK">NIK</label>
-                <input type="number" id="nik" name="nik" class="form-control">
+                <input type="number" id="nik" name="nik" class="form-control" required onblur="checkEmpty(this)">
+                <span id="nikhelp" class="form-text text-muted"></span>
               </div>
               <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" class="form-control">
+                <input type="text" id="nama" name="nama" class="form-control" required onblur="checkEmpty(this)">
+                <span id="namahelp" class="form-text text-muted"></span>
               </div>
               <div class="form-group">
                 <label for="jabatan">Jabatan</label>
@@ -61,11 +63,13 @@
               </div>
               <div class="form-group">
                 <label for="alamat">Alamat Saat Ini</label>
-                <textarea id="alamat" name="alamat" class="form-control" rows="2"></textarea>
+                <textarea id="alamat" name="alamat" class="form-control" rows="2" required onblur="checkEmpty(this)"></textarea>
+                <span id="alamathelp" class="form-text text-muted"></span>
               </div>
               <div class="form-group">
                 <label for="no_telepon">Nomor Telepon</label>
-                <input type="number" name="no_telepon" id="no_telepon" class="form-control">
+                <input type="number" name="no_telepon" id="no_telepon" class="form-control" required onblur="checkEmpty(this)">
+                <span id="no_teleponhelp" class="form-text text-muted"></span>
               </div>
             </div>
             <!-- /.card-body -->
@@ -80,28 +84,45 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="bank">Nama Bank</label>
-                <input type="text" id="bank" name="bank" class="form-control">
+                <input type="text" id="bank" name="bank" class="form-control" required onblur="checkEmpty(this)">
+                <span id="bankhelp" class="form-text text-muted"></span>
               </div>
               <div class="form-group">
                 <label for="no_rekening">Nomor Rekening</label>
-                <input type="number" id="no_rekening" name="no_rekening" class="form-control">
+                <input type="number" id="no_rekening" name="no_rekening" class="form-control" required onblur="checkEmpty(this)">
+                <span id="no_rekeninghelp" class="form-text text-muted"></span>
               </div>
               <div class="form-group">
                 <label for="nomorrekening">Gaji Pokok</label>
-                <input type="text" id="gaji" name="gaji" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="status">Status</label>
-                <select id="status" name="status" class="form-control custom-select">
-                  <option value="AKTIF" selected>Aktif</option>
-                  <option value="CUTI">Cuti</option>
-                  <option value="OUTBOUND">Tugas Keluar</option>
-                  <option value="SUSPENDED">Keluar / Diskors</option>
-                </select>
+                <input type="text" id="gaji" name="gaji" class="form-control" required onblur="checkEmpty(this)">
+                <span id="gajihelp" class="form-text text-muted"></span>
               </div>
             </div>
             <!-- /.card-body -->
           </div>
+
+          <div class="card card-danger">
+            <div class="card-header">
+              <h3 class="card-title">Hubungan Kerja Karyawan</h3>
+
+              <div class="card-tools">
+              </div>
+            </div>
+            <div class="card-body">
+            <div class="form-group">
+                  <label for="status">Status</label>
+                  <select id="status" name="status" class="form-control custom-select">
+                      <option value="" disabled selected>Pilih status karyawan..</option>
+                      <option value="AKTIF">Aktif</option>
+                      <option value="CUTI">Cuti</option>
+                      <option value="OUTBOUND">Tugas Keluar</option>
+                      <option value="SUSPENDED">Keluar / Diskors</option>
+                  </select>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
 
           <!-- /.card -->
         </div>
@@ -128,7 +149,21 @@
 <script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
 
 <script>
-  /*
+
+function checkEmpty(input) {
+    var helpText = document.getElementById(input.id + 'help');
+    if (input.value === '') {
+        helpText.textContent = 'Kolom ini wajib diisi.';
+        input.classList.add('is-invalid'); // Add is-invalid class
+        input.classList.remove('is-valid'); // Remove is-valid class
+    } else {
+        helpText.textContent = '';
+        input.classList.remove('is-invalid'); // Remove is-invalid class
+        input.classList.add('is-valid'); // Add is-valid class
+    }
+}
+
+
 document.getElementById('tambahkaryawan').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -155,5 +190,5 @@ document.getElementById('tambahkaryawan').addEventListener('submit', function(ev
             }, 5000);
         }
     });
-});*/
+});
 </script>

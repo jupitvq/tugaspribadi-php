@@ -83,7 +83,19 @@
                 <label for="nomorrekening">Gaji Pokok</label>
                 <input type="text" id="gaji" name="gaji" class="form-control" value="<?= $karyawan['gaji'] ?>">
               </div>
-              <div class="form-group">
+            </div>
+            <!-- /.card-body -->
+          </div>
+
+          <div class="card card-danger">
+            <div class="card-header">
+              <h3 class="card-title">Hubungan Kerja Karyawan</h3>
+
+              <div class="card-tools">
+              </div>
+            </div>
+            <div class="card-body">
+            <div class="form-group">
                 <label for="status">Status</label>
                 <select id="status" name="status" class="form-control custom-select">
                   <option value="AKTIF" <?= ($karyawan['status'] == 'AKTIF') ? 'selected' : '' ?>>Aktif</option>

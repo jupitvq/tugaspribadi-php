@@ -92,17 +92,22 @@ document.getElementById('logout-link').addEventListener('click', function(event)
 
     Swal.fire({
         title: 'Apakah anda yakin?',
-        text: "Sesi anda akan berakhir setelah logout!  ",
+        text: "Sesi anda akan berakhir setelah logout!",
+        timer: 10000,
+        timerProgressBar: true,
         icon: 'warning',
         footer: '<b>Catatan</b>: Pastikan semua pekerjaan anda sudah tersimpan.',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, logout!'
+        confirmButtonText: 'Konfirmasi',
+        cancelButtonText: 'Batal',
     }).then((result) => {
-        if (result.isConfirmed) {
+      if (result.isConfirmed) {
             window.location.href = '/logout';;
         }
     });
 });
+
+$('input[type="search"]').attr('placeholder', 'Pencarian...');
 </script>
