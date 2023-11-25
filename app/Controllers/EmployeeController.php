@@ -20,7 +20,7 @@ class EmployeeController extends Controller
         //return view('employees/employees-list', $data);
 
         $session = session();
-        $header['title']='Karyawan';
+        $header['title']='Karyawan | KaryawanEdit';
         echo view('partial/header',$header);
         echo view('partial/top_menu');
         echo view('partial/side_menu');
@@ -31,7 +31,7 @@ class EmployeeController extends Controller
     public function add()
     {   
         $session = session();
-        $header['title']='Tambah Karyawan | Karyawan';
+        $header['title']='Tambah Karyawan | Karyawan | KaryawanEdit';
         echo view('partial/header',$header);
         echo view('partial/top_menu');
         echo view('partial/side_menu');
@@ -43,7 +43,7 @@ class EmployeeController extends Controller
     {   
         helper(['form', 'url']);
 
-        $header['title'] = 'Membuat Data Karyawan | Karyawan';
+        $header['title'] = 'Membuat Data Karyawan | Karyawan | KaryawanEdit';
 
         $input = $this->validate([
         'nik' => 'required',
@@ -85,7 +85,7 @@ class EmployeeController extends Controller
     public function ubah($id)
     {
         $session = session();
-        $header['title']='Ubah Karyawan | Karyawan';
+        $header['title']='Ubah Karyawan | Karyawan | KaryawanEdit';
         $data['karyawan'] = $this->karyawan->find($id);
         echo view('partial/header',$header);
         echo view('partial/top_menu');
@@ -97,7 +97,7 @@ class EmployeeController extends Controller
     public function update($id)
     {
         $session = session();
-        $header['title']='Edit Karyawan | Karyawan';
+        $header['title']='Edit Karyawan | Karyawan | KaryawanEdit';
 
         $this->karyawan->update($id, [
             //'nik' => $this->request->getPost('nik'),

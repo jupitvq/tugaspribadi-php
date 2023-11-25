@@ -9,7 +9,7 @@ class Home extends BaseController
     {
         /*return view('welcome_message');*/
         $session = session();
-        $header['title']='Dashboard';
+        $header['title']='Dashboard | KaryawanEdit';
         echo view('partial/header',$header);
         echo view('partial/top_menu');
         echo view('partial/side_menu');

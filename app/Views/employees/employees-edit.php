@@ -1,3 +1,9 @@
+<style>
+label.error {
+  font-weight: normal !important;
+}
+</style>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
@@ -114,7 +120,7 @@
       <div class="row">
         <div class="col-12">
           <a href="/karyawan" class="btn btn-secondary">Batal</a>
-          <input type="submit" value="Simpan Data Karyawan" class="btn btn-success float-right">
+          <input type="submit" id="submit-button" value="Simpan Data Karyawan" class="btn btn-success float-right">
         </div>
       </div>
 
@@ -127,16 +133,102 @@
 
 <!-- jQuery -->
 <script src="<?=base_url('adminLTE/plugins/jquery/jquery.min.js')?>"></script>
+<!-- jquery-validation -->
+<script src="<?=base_url('adminLTE/plugins/jquery-validation/jquery.validate.min.js')?>"></script>
+<script src="<?=base_url('adminLTE/plugins/jquery-validation/additional-methods.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?=base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 <!-- SweetAlert2 -->
 <script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
 
 <script>
-document.getElementById('editkaryawan').addEventListener('submit', function(event) {
+$(document).ready(function () {
+  var validator = $('#editkaryawan').validate({
+    rules: {
+      nik: {
+        required: true,
+        number: true,
+        minlength: 16
+      },
+      nama: {
+        required: true
+      },
+      jabatan: {
+        required: true
+      },
+      alamat: {
+        required: true
+      },
+      no_telepon: {
+        required: true,
+        number: true,
+        minlength: 10
+      },
+      bank: {
+        required: true,
+      },
+      no_rekening: {
+        required: true,
+      },
+      gaji: {
+        required: true,
+      },
+      status: {
+        required: true,
+      }
+    },
+    messages: {
+      nik: {
+        required: "Harap isi kolom NIK",
+        number: "Harap isi kolom NIK dengan angka",
+        minlength: "Harap isi kolom NIK dengan 16 digit angka"
+      },
+      nama: {
+        required: "Harap isi kolom nama lengkap"
+      },
+      jabatan: {
+        required: "Harap isi pilih jabatan karyawan"
+      },
+      alamat: {
+        required: "Harap isi kolom alamat"
+      },
+      no_telepon: {
+        required: "Harap isi kolom nomor telepon",
+        number: "Harap isi menggunakan angka",
+        minlength: "Harap isi kolom nomor telepon dengan minimal 10 digit angka"
+      },
+      bank: {
+        required: "Harap isi kolom bank",
+      },
+      no_rekening: {
+        required: "Harap isi kolom nomor rekening",
+      },
+      gaji: {
+        required: "Harap isi kolom gaji pokok",
+      },
+      status: {
+        required: "Harap isi kolom status karyawan",
+      }
+    },
+    
+    highlight: function (element) {
+      $(element).addClass('is-invalid');
+      $(element).removeClass('is-valid');
+    },
+    unhighlight: function (element) {
+      $(element).removeClass('is-invalid');
+      $(element).addClass('is-valid');
+    },
+    submitHandler: function (form) {
+      form.submit();
+    }
+  });
+
+  $('#submit-button').click(function (event) {
     event.preventDefault();
 
-    Swal.fire({
+    if ($('#editkaryawan').valid()) {
+      Swal.fire({
         title: "Ubah data karyawan?",
         text: "Pastikan data karyawan yang baru sudah benar.",
         icon: "question",
@@ -147,7 +239,7 @@ document.getElementById('editkaryawan').addEventListener('submit', function(even
         cancelButtonText: "Batal",
     }).then((result) => {
         if (result.isConfirmed) {
-            event.target.submit();
+          $('#editkaryawan').submit();
 
             Swal.fire({
                 title: "Data diubah!",
@@ -159,5 +251,9 @@ document.getElementById('editkaryawan').addEventListener('submit', function(even
             }, 5000);
         }
     });
+    }
+  });
 });
+
 </script>
+

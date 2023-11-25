@@ -39,7 +39,7 @@
 
     <div class="callout callout-info">
         <h5><i class="fas fa-info"></i> Catatan:</h5>
-        Semua data karyawan akan ditampilkan di tabel bawah ini. Harap diingat,  <b>penghapusan atau perubahan data tidak bisa dikembalikan.</b>
+        Semua data karyawan akan ditampilkan di tabel bawah ini. <b> Harap diingat, penghapusan atau perubahan data tidak bisa dikembalikan.</b>
     </div>
 
     <?php
@@ -107,7 +107,7 @@
                       <td><?= $karyawan['no_telepon'] ?></td>
                       <td><?= $karyawan['bank'] ?></td>
                       <td><?= $karyawan['no_rekening'] ?></td>
-                      <td><?= $karyawan['gaji'] ?></td>
+                      <td>Rp <?= $karyawan['gaji'] ?></td>
                       <td>
                       <?php
                           $warnastatus = $karyawan['status'];
@@ -167,7 +167,7 @@
 <!-- SweetAlert2 -->
 <script src="<?=base_url('adminLTE/plugins/sweetalert2/sweetalert2.all.min.js')?>"></script>
 
-<!-- DataTable Display -->
+<!-- DataTables Display -->
 <script src="<?=base_url('adminLTE/plugins/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js')?>"></script>
@@ -181,7 +181,7 @@
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.print.min.js')?>"></script>
 <script src="<?=base_url('adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js')?>"></script>
 
-<!-- DataTables -->
+<!-- DataTables CSS -->
 <link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
 <link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
 <link rel="stylesheet" href="<?=base_url('adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
@@ -221,7 +221,7 @@ function konfirmasihapus(event, href) {
             "search": "",
             "lengthMenu": "Tampilkan _MENU_ entri",
             "zeroRecords": "Tidak ada data yang cocok.",
-            "info": "Menampilkan <b> _START_ </b> sampai <b> _END_ </b> dari <b> _TOTAL_ </b> data karyawan",
+            "info": "Menampilkan <b> _START_ </b> sampai <b> _END_ </b> dari total <b> _TOTAL_ </b> data karyawan",
             "infoEmpty": "Menampilkan <b>0</b> sampai <b>0</b> dari <b>0</b> data karyawan",
             "infoFiltered": "(disaring dari _MAX_ total data karyawan)",
             "paginate": {
