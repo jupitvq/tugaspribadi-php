@@ -248,6 +248,18 @@ function konfirmasihapus(event, href) {
             {
                 extend: 'print',
                 text: 'Cetak'
+            },
+            {
+              extend: 'copy',
+              text: 'Salin Data'
+            },
+            {
+              extend: 'colvis',
+              text: 'Tampilan Kolom'
+            },
+            {
+              extend: 'pageLength',
+              text: 'Tampilan Baris'
             }
         ],
       "paging": true,

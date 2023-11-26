@@ -65,22 +65,22 @@ class EmployeeController extends Controller
             'validation' => $this->validator
         ]);
         echo view('partial/footer');
-    } else {
-        $this->karyawan->insert([
-            'nik' => $this->request->getPost('nik'),
-            'nama' => $this->request->getPost('nama'),
-            'jabatan' => $this->request->getPost('jabatan'),
-            'alamat' => $this->request->getPost('alamat'),
-            'no_telepon' => $this->request->getPost('no_telepon'),
-            'bank' => $this->request->getPost('bank'),
-            'no_rekening' => $this->request->getPost('no_rekening'),
-            'gaji' => $this->request->getPost('gaji'),
-            'status' => $this->request->getPost('status'),
-        ]);
+            } else {
+                $this->karyawan->insert([
+                    'nik' => $this->request->getPost('nik'),
+                    'nama' => $this->request->getPost('nama'),
+                    'jabatan' => $this->request->getPost('jabatan'),
+                    'alamat' => $this->request->getPost('alamat'),
+                    'no_telepon' => $this->request->getPost('no_telepon'),
+                    'bank' => $this->request->getPost('bank'),
+                    'no_rekening' => $this->request->getPost('no_rekening'),
+                    'gaji' => $this->request->getPost('gaji'),
+                    'status' => $this->request->getPost('status'),
+                ]);
 
-        return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil ditambahkan!');
-        }
-    }
+                return redirect()->to('/karyawan')->with('success', 'Data Karyawan berhasil ditambahkan!');
+                }
+            }
 
     public function ubah($id)
     {
