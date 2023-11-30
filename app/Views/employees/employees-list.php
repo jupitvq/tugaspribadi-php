@@ -59,7 +59,10 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header d-flex flex-row">
-              <a type="button" href="/karyawan/tambah" class="btn btn-primary mr-2">Tambah Karyawan</a>
+              <a type="button" href="/karyawan/tambah" class="btn btn-primary mr-2">
+              <i class="fas fa-plus"></i>
+                Tambah Karyawan
+              </a>
               <!--
               <div class="input-group input-group-sm ml-auto" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -235,31 +238,31 @@ function konfirmasihapus(event, href) {
       "buttons": [
             {
                 extend: 'csv',
-                text: 'CSV'
+                text: '<i class="fas fa-file-excel"></i> CSV'
             },
             {
                 extend: 'excel',
-                text: 'Excel'
+                text: '<i class="fas fa-file-excel"></i> Excel'
             },
             {
                 extend: 'pdf',
-                text: 'PDF'
+                text: '<i class="fas fa-file-pdf"></i> PDF'
             },
             {
                 extend: 'print',
-                text: 'Cetak'
+                text: '<i class="fas fa-print"></i> Cetak'
             },
             {
               extend: 'copy',
-              text: 'Salin Data'
+              text: '<i class="fas fa-copy"></i> Salin Data'
             },
             {
               extend: 'colvis',
-              text: 'Tampilan Kolom'
+              text: '<i class="fas fa-columns"></i> Tampilan Kolom'
             },
             {
               extend: 'pageLength',
-              text: 'Tampilan Baris'
+              text: '<i class="fas fa-list-ol"></i>  Tampilan Baris'
             }
         ],
       "paging": true,
