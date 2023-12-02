@@ -115,25 +115,31 @@
                       <?php
                           $warnastatus = $karyawan['status'];
                           $badgeColor = '';
+                          $iconClass = '';
                           switch ($warnastatus) {
                             case 'OUTBOUND':
                               $badgeColor = 'info';
+                              $iconClass = 'fas fa-arrow-right'; // replace with the class for your icon
                               break;
                             case 'CUTI':
                               $badgeColor = 'warning';
+                              $iconClass = 'fas fa-calendar-minus'; // replace with the class for your icon
                               break;
                             case 'AKTIF':
                               $badgeColor = 'success';
+                              $iconClass = 'fas fa-check'; // replace with the class for your icon
                               break;
                             case 'SUSPENDED':
                               $badgeColor = 'danger';
+                              $iconClass = 'fas fa-ban'; // replace with the class for your icon
                               break;
                             default:
                               $badgeColor = 'default';
+                              $iconClass = ''; // no icon for the default case
                               break;
                           }
                         ?>
-                        <span class="badge bg-<?= $badgeColor; ?>"><?= $karyawan['status'] ?></span>
+                        <span class="badge bg-<?= $badgeColor; ?>"><i class="<?= $iconClass; ?>"></i> <?= $karyawan['status'] ?></span>
                       </td>
                       <td class="project-actions">
                           <a class="btn btn-info btn-sm" href="/karyawan/ubah/<?= $karyawan['id'] ?>">
