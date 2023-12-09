@@ -42,18 +42,18 @@
         Semua data karyawan akan ditampilkan di tabel bawah ini. <b> Harap diingat, penghapusan atau perubahan data tidak bisa dikembalikan.</b>
     </div>
 
-    <?php
-        if(session()->getFlashData('success')){
-        ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?= session()->getFlashData('success') ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <?php
-        }
-        ?>
+            <?php
+                if(session()->getFlashData('success')){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= session()->getFlashData('success') ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+                }
+                ?>
             <!-- /.row -->
             <div class="row">
           <div class="col-12">
@@ -119,23 +119,23 @@
                           switch ($warnastatus) {
                             case 'OUTBOUND':
                               $badgeColor = 'info';
-                              $iconClass = 'fas fa-arrow-right'; // replace with the class for your icon
+                              $iconClass = 'fas fa-arrow-right';
                               break;
                             case 'CUTI':
                               $badgeColor = 'warning';
-                              $iconClass = 'fas fa-calendar-minus'; // replace with the class for your icon
+                              $iconClass = 'fas fa-calendar-minus';
                               break;
                             case 'AKTIF':
                               $badgeColor = 'success';
-                              $iconClass = 'fas fa-check'; // replace with the class for your icon
+                              $iconClass = 'fas fa-check';
                               break;
                             case 'SUSPENDED':
                               $badgeColor = 'danger';
-                              $iconClass = 'fas fa-ban'; // replace with the class for your icon
+                              $iconClass = 'fas fa-ban';
                               break;
                             default:
                               $badgeColor = 'default';
-                              $iconClass = ''; // no icon for the default case
+                              $iconClass = '';
                               break;
                           }
                         ?>
